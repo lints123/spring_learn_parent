@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--说明：xml配置和注解的方式-->
+
+    <!--目标对象-->
+    <bean id="userService" class="com.learn.aop.service.impl.UserServiceImpl"/>
+
+    <!--增强目标对象的对象-->
+    <bean id="myAdvice2" class="com.learn.aop.advice.MyAdvice2"/>
+
+    <aop:config>
+        <aop:pointcut id="myPointcut2" expression="execution(* com.learn.aop.service.*.*(..))"/>
+
+        <!--用于接口等方式-->
+        <aop:advisor advice-ref="myAdvice2" pointcut-ref="myPointcut2"/>
+    </aop:config>
+
+</beans>
