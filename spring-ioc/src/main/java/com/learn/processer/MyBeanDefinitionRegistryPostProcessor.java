@@ -16,6 +16,7 @@ public class MyBeanDefinitionRegistryPostProcessor implements BeanDefinitionRegi
     public void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry beanDefinitionRegistry) throws BeansException {
         System.out.println("MyBeanDefinitionRegistryPostProcessor >>> postProcessBeanDefinitionRegistry >>> ");
         // 注册BeanDefinition
+
     }
 
     public void postProcessBeanFactory(ConfigurableListableBeanFactory configurableListableBeanFactory) throws BeansException {

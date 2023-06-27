@@ -12,7 +12,7 @@
     <artifactId>spring-ioc</artifactId>
 
     <dependencies>
-        <!-- 上下文 -->
+        <!-- spring 上下文处理 -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>

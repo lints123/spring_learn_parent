@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="userDao1" class="com.learn.dao.impl.UserDaoImpl"/>
+    <bean id="userDao2" class="com.learn.dao.impl.UserDaoImpl"/>
+    <bean id="userDao3" class="com.learn.dao.impl.UserDaoImpl"/>
+
+    <!--properties 配置 -->
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+
+    <bean id="userService" class="com.learn.service.impl.UserServiceImpl">
+        <constructor-arg name="userName" value="测试"/>
+        <property name="userDao" ref="userDao1"/>
+    </bean>
+
+    <!--将Bean注入到spring IOC容器中处理-->
+<!--    <bean id="userService" class="com.learn.service.impl.UserServiceImpl">-->
+<!--        <property name="stringList">-->
+<!--            <list>-->
+<!--                <value>aaa</value>-->
+<!--                <value>bbb</value>-->
+<!--                <value>ccc</value>-->
+<!--            </list>-->
+<!--        </property>-->
+
+<!--        <property name="strSet">-->
+<!--            <set>-->
+<!--                <value>xxx</value>-->
+<!--                <value>yyy</value>-->
+<!--            </set>-->
+<!--        </property>-->
+<!--        -->
+<!--        <property name="userDaoList">-->
+<!--            <list>-->
+<!--                <ref bean="userDao1"/>-->
+<!--                <ref bean="userDao2"/>-->
+<!--                <ref bean="userDao3"/>-->
+<!--            </list>-->
+<!--        </property>-->
+
+<!--        <property name="userDaoMap">-->
+<!--            <map>-->
+<!--                <entry key="userKey1" value-ref="userDao1"/>-->
+<!--                <entry key="userKey2" value-ref="userDao2"/>-->
+<!--            </map>-->
+<!--        </property>-->
+<!--        -->
+<!--        <property name="properties">-->
+<!--            <props>-->
+<!--                <prop key="p1">aaaa</prop>-->
+<!--                <prop key="p2">bbbb</prop>-->
+<!--            </props>-->
+<!--        </property>-->
+<!--    </bean>-->
+
+
+</beans>
