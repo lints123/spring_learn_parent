@@ -61,8 +61,22 @@
         </property>
     </bean>
 
-    <bean id="myBeanFactory" class="com.learn.factorys.MyBeanFactory">
+<!--通过BeanFactory创建Bean对象开始-->
+    <!--这里定义的是静态的方法  getUserServiceToStatic-->
+<!--    <bean id="myBeanFactory" class="com.learn.factorys.MyBeanFactory" factory-method="getUserServiceToStatic">-->
+<!--        <constructor-arg name="userName" value="zhangsan"/>-->
+<!--    </bean>-->
 
-    </bean>
+    <!--这里定义的是非静态方法，Bean的创建交给BeanFactory-->
+<!--    <bean id="myBeanFactory1" class="com.learn.factorys.MyBeanFactory"/>
+
+    <bean id="userServiceFactory" factory-bean="myBeanFactory1" factory-method="getUserService">
+        <constructor-arg name="userName" value="zhangsan"/>
+    </bean>-->
+<!--通过BeanFactory创建Bean对象结束-->
+
+<!--通过FactoryBean创建对象开始-->
+    <!--<bean id="userService" class="com.learn.factorys.MyFactoryBean"/>-->
+<!--通过FactoryBean创建对象结束-->
 
 </beans>
