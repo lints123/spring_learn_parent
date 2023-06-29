@@ -14,50 +14,55 @@
     <!--properties 配置 -->
     <context:property-placeholder location="classpath:jdbc.properties"/>
 
+
+    <!--将Bean注入到spring IOC容器中处理
+    1. 构造方法创建Bean对象（无参构造或者有参构造）
+    2. Bean对象内部，多参数配置
+    -->
     <bean id="userService" class="com.learn.service.impl.UserServiceImpl">
-        <constructor-arg name="userName" value="测试"/>
-        <property name="userDao" ref="userDao1"/>
+        <!--注释，则默认无参构造-->
+        <!--<constructor-arg name="userName" value="测试"/>
+        <constructor-arg name="userDao" ref="userDao1"/>-->
+        <property name="stringList">
+            <list>
+                <value>aaa</value>
+                <value>bbb</value>
+                <value>ccc</value>
+            </list>
+        </property>
+
+        <property name="strSet">
+            <set>
+                <value>xxx</value>
+                <value>yyy</value>
+            </set>
+        </property>
+
+        <property name="userDaoList">
+            <list>
+                <ref bean="userDao1"/>
+                <ref bean="userDao2"/>
+                <ref bean="userDao3"/>
+            </list>
+        </property>
+
+        <property name="userDaoMap">
+            <map>
+                <entry key="userKey1" value-ref="userDao1"/>
+                <entry key="userKey2" value-ref="userDao2"/>
+            </map>
+        </property>
+
+        <property name="properties">
+            <props>
+                <prop key="p1">aaaa</prop>
+                <prop key="p2">bbbb</prop>
+            </props>
+        </property>
     </bean>
 
-    <!--将Bean注入到spring IOC容器中处理-->
-<!--    <bean id="userService" class="com.learn.service.impl.UserServiceImpl">-->
-<!--        <property name="stringList">-->
-<!--            <list>-->
-<!--                <value>aaa</value>-->
-<!--                <value>bbb</value>-->
-<!--                <value>ccc</value>-->
-<!--            </list>-->
-<!--        </property>-->
+    <bean id="myBeanFactory" class="com.learn.factorys.MyBeanFactory">
 
-<!--        <property name="strSet">-->
-<!--            <set>-->
-<!--                <value>xxx</value>-->
-<!--                <value>yyy</value>-->
-<!--            </set>-->
-<!--        </property>-->
-<!--        -->
-<!--        <property name="userDaoList">-->
-<!--            <list>-->
-<!--                <ref bean="userDao1"/>-->
-<!--                <ref bean="userDao2"/>-->
-<!--                <ref bean="userDao3"/>-->
-<!--            </list>-->
-<!--        </property>-->
-
-<!--        <property name="userDaoMap">-->
-<!--            <map>-->
-<!--                <entry key="userKey1" value-ref="userDao1"/>-->
-<!--                <entry key="userKey2" value-ref="userDao2"/>-->
-<!--            </map>-->
-<!--        </property>-->
-<!--        -->
-<!--        <property name="properties">-->
-<!--            <props>-->
-<!--                <prop key="p1">aaaa</prop>-->
-<!--                <prop key="p2">bbbb</prop>-->
-<!--            </props>-->
-<!--        </property>-->
-<!--    </bean>-->
-
+    </bean>
 
 </beans>

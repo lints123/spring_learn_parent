@@ -24,10 +24,13 @@ public class UserServiceImpl implements IUserService {
 
     private String userName;
     private IUserDao userDao;
-    public void setUserName(String userName) {
-        this.userName = userName;
+
+    public UserServiceImpl() {
+        System.out.println("UserServiceImpl >>> 无参构造实例化Bean");
     }
-    public void setUserDao(IUserDao userDao) {
+    public UserServiceImpl(String userName, IUserDao userDao) {
+        System.out.println("UserServiceImpl >>> 有参构造实例化Bean");
+        this.userName = userName;
         this.userDao = userDao;
     }
 
