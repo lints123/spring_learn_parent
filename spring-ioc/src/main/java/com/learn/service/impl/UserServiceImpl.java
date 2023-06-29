@@ -34,6 +34,12 @@ public class UserServiceImpl implements IUserService {
         this.userDao = userDao;
     }
 
+// 自动装配的定义
+//    public void setUserDao(IUserDao userDao) {
+//        System.out.println("UserServiceImpl >>> setUserDao >>> 自动注入");
+//        this.userDao = userDao;
+//    }
+
     public void show() {
         System.out.println("UserServiceImpl >>> show");
 
