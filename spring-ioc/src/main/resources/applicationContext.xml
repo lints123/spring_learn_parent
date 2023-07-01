@@ -7,9 +7,16 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="userDao1" class="com.learn.dao.impl.UserDaoImpl"/>
-    <bean id="userDao2" class="com.learn.dao.impl.UserDaoImpl"/>
-    <bean id="userDao3" class="com.learn.dao.impl.UserDaoImpl"/>
+<!--    <bean id="userDao1" class="com.learn.dao.impl.UserDaoImpl"/>-->
+<!--    <bean id="userDao2" class="com.learn.dao.impl.UserDaoImpl"/>-->
+<!--    <bean id="userDao3" class="com.learn.dao.impl.UserDaoImpl"/>-->
+
+    <!--加载BeanFactoryPostProcess-->
+    <bean class="com.learn.processer.MyBeanFactoryPostProcessor"/>
+    <bean class="com.learn.processer.MyBeanDefinitionRegistryPostProcessor"/>
+
+    <!--加载BeanPostProcessor-->
+    <bean class="com.learn.processer.MyBeanPostProcessor"/>
 
     <!--properties 配置 -->
     <context:property-placeholder location="classpath:jdbc.properties"/>

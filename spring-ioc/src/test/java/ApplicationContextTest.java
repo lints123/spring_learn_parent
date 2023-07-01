@@ -1,3 +1,4 @@
+import com.learn.service.IPersonService;
 import com.learn.service.IUserService;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -19,5 +20,11 @@ public class ApplicationContextTest {
         userService.show();
     }
 
+    @Test
+    public void testProcess() {
+        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+        IPersonService bean = applicationContext.getBean(IPersonService.class);
+        bean.sayPerson();
+    }
 
 }
