@@ -24,7 +24,7 @@ applicationContext.xml 声明两个Bean的位置，交由IOC容器处理，容�
 0. 如果是xml配置，通过命名空间,spring-context/META/INF/spring.handlers, 获取到配置ContextNamespaceHandler/SpringConfiguredBeanDefinitionParser类
    内部就是注册BeanDefinition的操作。
 0. 如果是xml配置，但是是扫描的操作，同上，只是处理器是：ComponentScanBeanDefinitionParser
-0. 如果是注解操作，待确认   
+0. 如果是注解操作，待确认？？？
 1. 暴露BeanDefinitionRegistryPostProcessor来将BeanDefinition存储到BeanDefinitionMap中。
 2. 暴露BeanFactoryProcessor，可以操作BeanDefinition
 3. 属性填充populate
@@ -32,3 +32,6 @@ applicationContext.xml 声明两个Bean的位置，交由IOC容器处理，容�
 5. BeanPostProcessor >>> before方法执行
 6. InitializingBean接口初始化
 7. BeanPostProcessor >>> after方法执行
+
+# 总结
+其实说白了，就是扫描Bean的位置 >> 获取Bean的基本信息 >> 创建BeanDefinition >> 存储到BeanDefinitionMap >> 实例化为Bean >> 存储到SingletonObject的Map中。

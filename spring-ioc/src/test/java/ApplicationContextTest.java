@@ -20,6 +20,9 @@ public class ApplicationContextTest {
         userService.show();
     }
 
+    /**
+     *
+     */
     @Test
     public void testProcess() {
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
