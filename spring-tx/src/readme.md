@@ -72,5 +72,7 @@
 1. ApplicationContextTest文件默认会将所有的test方法进行加载，导致服务启动会加载applicationContext1.xml文件，提示SqlSessionFactory重复
 2. web.xml中，监听器没有打开，无法加载到SpringConfig
 
-
+## 如何加载配置文件？
+1. 通过ServletContextListener，内部方法contextInitialized, 会默认加载context-param标签的内容，加载到Spring容器中，后面再从applicationContext中获取
+2. 模拟操作: 实现ServletContextListener
 # 源码解析

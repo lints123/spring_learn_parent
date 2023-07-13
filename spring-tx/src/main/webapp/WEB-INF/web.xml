@@ -19,6 +19,11 @@
     <!--配置Listener-->
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+
+        <!--自定义Listener，模拟容器启动自动加载监听-->
+        <!--<listener-class>com.learn.listener.ContextLoaderListener</listener-class>-->
     </listener>
+
+    <!-- 该Listener，会默认执行contextInitialized，而该方法，会去解析context-param标签中定义的类，加载到Spring容器中。-->
 
 </web-app>

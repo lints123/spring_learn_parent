@@ -1,7 +1,6 @@
 package com.learn.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
-import com.sun.org.apache.bcel.internal.generic.DUP;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Value;
