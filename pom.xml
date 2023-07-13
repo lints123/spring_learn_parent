@@ -13,6 +13,7 @@
         <module>spring-ioc</module>
         <module>spring-ioc-anno</module>
         <module>spring-tx</module>
+        <module>spring-mvc</module>
     </modules>
 
     <dependencies>
