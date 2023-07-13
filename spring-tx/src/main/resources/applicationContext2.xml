@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!--1、配置注解扫描-->
+    <context:component-scan base-package="com.learn"/>
+
+    <!--2、加载配置文件-->
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+
+    <!--3、MapperScannerConfigurer,作用扫描指定的包，产生Mapper对象存储到Spring容器-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.learn.mapper"/>
+    </bean>
+
+    <!--5、配置dataSource-->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="${jdbc.driver}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+
+    <!--4、配置SqlSessionFactoryBean，作用将SqlSessionFactory存储到spring容器-->
+    <bean class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!--6、配置事务管理器-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!--7、注解配置，事务自动代理-->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+    <!--总结：使用该配置，则需要在指定方法通过注解@Transaltion来进行事务管理-->
+</beans>

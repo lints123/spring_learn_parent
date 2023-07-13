@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <!--该配置的作用，将spring和web进行整合，不然就需要每次都需要获取Spring容器，获取到具体的Bean，在执行方法-->
+
+    <!--该配置针对注解方式，告诉Spring，要扫描这些配置-->
+    <context-param>
+        <param-name>contextClass</param-name>
+        <param-value>com.learn.config.MyAnnotationConfigApplicationContext</param-value>
+    </context-param>
+
+    <!--定义全局参数，该配置针对XML配置-->
+<!--    <context-param>-->
+<!--        <param-name>contextConfigLocation</param-name>-->
+<!--        <param-value>classpath:applicationContext1.xml</param-value>-->
+<!--    </context-param>-->
+    <!--配置Listener-->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+</web-app>
