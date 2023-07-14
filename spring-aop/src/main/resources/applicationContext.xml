@@ -8,10 +8,10 @@
        http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <!--配置目标对象-->
-    <bean id="userService" class="com.learn.aop.service.impl.UserServiceImpl"></bean>
+    <bean id="userService" class="com.learn.aop.service.impl.UserServiceImpl"/>
 
     <!--配置代理对象，实际上就是增强-->
-    <bean id="myAdvice" class="com.learn.aop.advice.MyAdvice"></bean>
+    <bean id="myAdvice" class="com.learn.aop.advice.MyAdvice"/>
 
 
     <!--<aop:config proxy-target-class="true"> 表示是否要创建CGLIB的代理，默认存在接口是JDK动态代理-->
