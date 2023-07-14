@@ -19,7 +19,7 @@ public class UserServiceImpl implements IUserService {
     @Transactional(isolation = Isolation.READ_COMMITTED,propagation = Propagation.REQUIRED)
     public void opt() {
         userMapper.decrMoney("zhangsan", 500);
-        // int i = 1/0;
+        int i = 1/0;
         userMapper.incrMoney("lisi", 500);
         System.out.println("转账成功");
     }
