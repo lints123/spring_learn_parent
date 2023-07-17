@@ -10,3 +10,22 @@
 作用: 请求映射、URL匹配策略、生成请求处理器映射、处理器方法的处理器适配。
 
 # DispatchServlet
+
+# Interceptor 
+执行顺序: 
+MyInterceptor1 >>> preHandle >>> true
+MyInterceptor2 >>> preHandle >>> true
+param1 >>> 
+MyInterceptor2 >>> postHandle >>> 
+MyInterceptor1 >>> postHandle >>> 
+MyInterceptor2 >>> afterCompletion >>> 
+MyInterceptor1 >>> afterCompletion >>> 
+
+# 配置处理
+
+## xml配置
+> spring整合mvc，将bean的管理注入到mvc容器中。涉及：请求、响应、拦截、静态资源、上传文件处理。
+spring-mvc.xml 和 spring-mvc2.xml 
+
+## 全注解配置
+

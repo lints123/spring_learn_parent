@@ -22,6 +22,7 @@ public class UserController {
     @GetMapping("/param1")
     public String param1(User user) {
         System.out.println("param1 >>> ");
+        // 这里传递的user，会带到index.jsp里面
         return "/index.jsp";
     }
 

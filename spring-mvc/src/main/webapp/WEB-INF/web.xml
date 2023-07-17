@@ -3,7 +3,7 @@
          xmlns="http://xmlns.jcp.org/xml/ns/javaee"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
                              http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
-         version="4.0">
+         version="4.0" metadata-complete="true">
     <!-- 配置 DispatcherServlet -->
     <servlet>
         <servlet-name>dispatcher</servlet-name>
@@ -11,7 +11,7 @@
         <!-- 指定 Spring MVC 配置文件 -->
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>classpath:spring-mvc.xml</param-value>
+            <param-value>classpath:spring-mvc2.xml</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
