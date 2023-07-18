@@ -22,11 +22,10 @@ MyInterceptor1 >>> postHandle >>>
 MyInterceptor2 >>> afterCompletion >>> 
 MyInterceptor1 >>> afterCompletion >>> 
 
-# 配置处理
+# 配置
 
 ## xml配置
 > spring整合mvc，将bean的管理注入到mvc容器中。涉及：请求、响应、拦截、静态资源、上传文件处理。
-- 配置请求
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
