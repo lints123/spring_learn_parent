@@ -10,8 +10,8 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
  * @Descirption
  */
 @Configuration
-@EnableWebMvc
 @ComponentScan("com.learn")
+@EnableWebMvc
 public class SpringMvcConfig {
 
 
