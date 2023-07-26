@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class ResponseController {
 
+    // http://localhost:8080/spring-mvc/res1
     @GetMapping("/res1")
     @ResponseBody
     public User res1() {
